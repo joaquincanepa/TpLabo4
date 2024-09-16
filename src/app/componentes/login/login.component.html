@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center text-primary">Firestore</h1>
+            <input [(ngModel)]="user" class="form-control my-2">
+            <div class="d-grid gap-2">
+                <button (click)="Login()" class="btn btn-primary">Login</button>
+                <button (click)="GetData()" class="btn btn-secondary">Obtener registros</button>
+            </div>
+
+            <div *ngIf="loginsCollection.length > 0" class="mt-4">
+                <h2 class="text-center text-success">Ingresos: {{countLogins}}</h2>
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let login of loginsCollection; let i = index">
+                            <th scope="row">{{ i + 1 }}</th>
+                            <td>{{ login.user }}</td>
+                            <td>{{ (login.fecha.seconds * 1000) | date:'dd-MM-yy' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
