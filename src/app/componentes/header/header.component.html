@@ -1,0 +1,66 @@
+
+<header>
+    <div class="header">
+    <div *ngIf="logged == false;else loggedHeader">
+
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a routerLink="home" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            <img src="../../../assets/imagenes/iconoHeader.jpg" alt="Logo de la pagina" height="60">
+            
+          </a>
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0">
+            <li>
+              <a routerLink="home" class="nav-link text-white">
+                <img src="../../../assets/imagenes/home.png" alt="login" height="30"><strong>Home</strong>       
+              </a>
+            </li>
+            <li>
+              <a routerLink="/quien-soy" class="nav-link text-white">
+                <img src="../../../assets/imagenes/quien-soy.png" alt="login" height="30"><strong>¿Quien soy?</strong>   
+              </a>
+            </li>
+            <li>
+              <a routerLink="/register" class="nav-link text-white">
+                <img src="../../../assets/imagenes/registrar.png" alt="login" height="30"><strong>Registrate</strong> 
+              </a>
+            </li>
+            <li>
+              <a routerLink="/login" class="nav-link text-white">
+                <img src="../../../assets/imagenes/iniciar-sesion.png" alt="login" height="30"><strong>Login</strong>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ng-template #loggedHeader>
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/home" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+            <img src="../../../assets/imagenes/conexion.png" alt="logoconectado" height="30">
+            <strong style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 15px;"> {{emailUsuario}}</strong>
+            <img src="../../../assets/imagenes/iconoHeader.jpg" alt="Logo de la pagina" height="60">
+          </a>
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0">
+            <li>
+              <a routerLink="home" class="nav-link text-white">
+                <img src="../../../assets/imagenes/home.png" alt="login" height="30"><strong> Home</strong>       
+              </a>
+            </li>
+            <li>
+              <a routerLink="/quien-soy" class="nav-link text-white">
+                <img src="../../../assets/imagenes/quien-soy.png" alt="login" height="30"><strong> ¿Quien soy?</strong>   
+              </a>
+            </li>
+            <li>
+              <a routerLink="" class="nav-link text-white">
+                <img src="../../../assets/imagenes/puerta-de-salida.png" alt="salir" height="30"><strong (click)="logout()"> Salir</strong>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ng-template>
+    </div>
+  </header>

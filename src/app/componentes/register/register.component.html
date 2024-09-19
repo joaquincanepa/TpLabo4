@@ -1,0 +1,37 @@
+<section class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="mask gradient-custom-3 w-100 h-100 d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Crear una cuenta</h2>
+                            <form (ngSubmit)="Register()">
+                                <div class="form-outline mb-4">
+                                    <input type="email" [(ngModel)]="newUserMail" name="email" class="form-control form-control-lg" placeholder="Tu Email" required />
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <input type="password" [(ngModel)]="newUserPWD" name="password" class="form-control form-control-lg" placeholder="Contraseña" required />
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                                        Registrarse
+                                    </button>
+                                </div>
+                                <div *ngIf="loggedUser !== ''" class="text-center mt-3">
+                                    <h3 class="text-success">Usuario registrado: {{ loggedUser }}</h3>
+                                </div>
+                                <p class="text-center text-muted mt-5 mb-0">
+                                    <a href="login" class="fw-bold text-body">
+                                        <p>¿Ya tienes una cuenta?</p>
+                                        <u>Inicia sesión aquí</u>
+                                    </a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
